@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,6 @@ import { PerguntaComponent } from './components/pergunta/pergunta.component';
 import { RespostaCheckComponent } from './components/resposta-check/resposta-check.component';
 import { RespostaRadioComponent } from './components/resposta-radio/resposta-radio.component';
 import { RespostaTextoComponent } from './components/resposta-texto/resposta-texto.component';
-import { RespostaComponent } from './components/resposta/resposta.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,12 @@ import { RespostaComponent } from './components/resposta/resposta.component';
     PerguntaComponent,
     RespostaCheckComponent,
     RespostaRadioComponent,
-    RespostaTextoComponent,
-    RespostaComponent
+    RespostaTextoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

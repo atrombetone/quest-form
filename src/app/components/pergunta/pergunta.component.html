@@ -2,7 +2,25 @@
   {{pergunta.questao}}
 </h4>
 
-<app-resposta *ngFor="let item of pergunta.respostas" 
-  [tipo]="pergunta.questaoType"
-  [resposta]="item"></app-resposta>
+<div *ngFor="let item of pergunta.respostas; let i = index">
+  <app-resposta-check 
+    [indiceResposta]="i"
+    [resposta]="item" 
+    (setarResposta)="setarResposta($event)"
+    *ngIf="pergunta.questaoType == 'check'"></app-resposta-check>
+  <app-resposta-texto 
+    [indiceResposta]="i"
+    [resposta]="item" 
+    (setarResposta)="setarResposta($event)"
+    *ngIf="pergunta.questaoType == 'text'"></app-resposta-texto>
+  <app-resposta-radio 
+    [indiceResposta]="i"
+    [resposta]="item" 
+    (setarResposta)="setarResposta($event)"
+    *ngIf="pergunta.questaoType == 'radio'"></app-resposta-radio>
+</div>
+
+
+
+
 

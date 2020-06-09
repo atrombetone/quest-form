@@ -1,7 +1,12 @@
 <h3>
   {{ assunto.titulo}}
 </h3>
-
-<app-pergunta *ngFor="let item of assunto.questoes" [pergunta]="item"></app-pergunta>
+<div *ngFor="let item of assunto.questoes; let i = index">
+  <app-pergunta 
+    [indicePergunta]="i" 
+    [pergunta]="item" 
+    (perguntaRespondida)="respondeuQuestao($event)"
+    *ngIf="item.visivel"></app-pergunta>
+</div>
 {{dados}}
 

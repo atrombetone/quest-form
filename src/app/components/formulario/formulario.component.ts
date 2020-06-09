@@ -11,10 +11,15 @@ export class FormularioComponent implements OnInit {
   @Input()
   formulario: FormularioModel;
 
+  respostas: string;
   constructor() { }
 
   ngOnInit() {
     
+  }
+
+  verResposta() {
+    this.respostas = JSON.stringify(this.formulario);
   }
 
 }

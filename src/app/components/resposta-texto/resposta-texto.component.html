@@ -1,3 +1,11 @@
 <p>
-  resposta-texto works!
+  {{resposta.textoResposta}}
 </p>
+<textarea 
+  name="txtResposta" 
+  id="txtResposta" 
+  cols="30"
+  rows="10"
+  [(ngModel)]="textoResposta"
+  ></textarea>
+<button (click)="devolverResposta()">Gravar</button>

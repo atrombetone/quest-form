@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RespostaModel } from 'src/app/models/resposta.model';
 
 @Component({
   selector: 'app-resposta-texto',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RespostaTextoComponent implements OnInit {
 
+  @Input()
+  indiceResposta: number;
+
+  @Input()
+  resposta: RespostaModel;
+
+  @Output()
+  setarResposta = new EventEmitter();
+
+  textoResposta: string;
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  devolverResposta() {
+    this.setarResposta.emit({index: this.indiceResposta, resposta: this.resposta, texto: this.textoResposta});
   }
 
 }

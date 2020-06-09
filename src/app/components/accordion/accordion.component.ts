@@ -17,4 +17,8 @@ export class AccordionComponent implements OnInit {
 
   }
 
+  respondeuQuestao($event) {
+    if(this.assunto.questoes[$event.indice + 1])
+      this.assunto.questoes[$event.indice + 1].visivel = true;
+  }
 }
