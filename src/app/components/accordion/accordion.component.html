@@ -1,0 +1,7 @@
+<h3>
+  {{ assunto.titulo}}
+</h3>
+
+<app-pergunta *ngFor="let item of assunto.questoes" [pergunta]="item"></app-pergunta>
+{{dados}}
+

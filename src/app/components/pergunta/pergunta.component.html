@@ -1,0 +1,8 @@
+<h4>
+  {{pergunta.questao}}
+</h4>
+
+<app-resposta *ngFor="let item of pergunta.respostas" 
+  [tipo]="pergunta.questaoType"
+  [resposta]="item"></app-resposta>
+
